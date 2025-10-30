@@ -345,7 +345,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1115868618}
   - component: {fileID: 1115868620}
-  - component: {fileID: 1115868619}
   - component: {fileID: 1115868621}
   m_Layer: 0
   m_Name: Square
@@ -353,7 +352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1115868618
 Transform:
   m_ObjectHideFlags: 0
@@ -369,18 +368,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1953952573}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1115868619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1115868617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dff2b1c057097ba4f86fff75bda3efe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ButtonTest
 --- !u!212 &1115868620
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -513,8 +500,8 @@ Transform:
   m_GameObject: {fileID: 1364943002}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.5, y: 2, z: 0}
-  m_LocalScale: {x: 22.33, y: 1.04, z: 1}
+  m_LocalPosition: {x: -6.7, y: 1.1, z: 0}
+  m_LocalScale: {x: 13.118875, y: 1.04, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1953952573}
@@ -651,7 +638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1731515873
 Transform:
   m_ObjectHideFlags: 0
@@ -764,7 +751,7 @@ Transform:
   m_GameObject: {fileID: 1953952571}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.88, y: -4.96, z: 0}
+  m_LocalPosition: {x: 8.94, y: -5.03, z: 0}
   m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

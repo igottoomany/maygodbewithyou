@@ -15,8 +15,9 @@ public class ButtonTest : MonoBehaviour
     {
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
-        offset = transform.parent.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-
+        offset = transform.parent.position -
+                 Camera.main.ScreenToWorldPoint(
+                     new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
     }
 
     void OnMouseDrag()
@@ -26,19 +27,16 @@ public class ButtonTest : MonoBehaviour
         Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
         transform.parent.position = curPosition;
 
+        sr.color = Color.gray4;
+    }
+
+    void OnMouseUp()
+    {
+        sr.color = Color.white;
     }
     
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 clickPos = new Vector2(worldPos.x, worldPos.y);
-            Collider2D col = Physics2D.OverlapPoint(clickPos);
-            if (col.gameObject.Equals(gameObject))
-            {
-                sr.color = sr.color.Equals(Color.black) ? Color.white : Color.black;
-            }
-        }
+        
     }
 }
