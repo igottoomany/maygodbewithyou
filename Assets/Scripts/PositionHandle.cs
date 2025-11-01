@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class ButtonTest : MonoBehaviour
+public class PositionHandle : MonoBehaviour
 {
     private SpriteRenderer sr;
     private Vector3 screenPoint;
@@ -27,16 +27,11 @@ public class ButtonTest : MonoBehaviour
         Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
         transform.parent.position = curPosition;
 
-        sr.color = Color.gray4;
+        sr.color = new Color(0.4f, 0.4f, 0.4f, 0.5f); // gray 127 alpha
     }
 
     void OnMouseUp()
     {
-        sr.color = Color.white;
-    }
-    
-    void Update()
-    {
-        
+        sr.color = new Color(1f, 1f, 1f, 0.5f); // white 127 alpha
     }
 }

@@ -3,9 +3,13 @@ using System.Runtime.InteropServices;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
-public class TransparentWindow : MonoBehaviour 
+public class TransparentWindow : MonoBehaviour
 {
+    public static TransparentWindow Instance;
+    public bool isMenuOpen;
     [DllImport("user32.dll")]
     private static extern IntPtr GetActiveWindow();
 
@@ -41,9 +45,17 @@ public class TransparentWindow : MonoBehaviour
 
     private IntPtr hWnd;
 
-    private void Start() 
+    
+    //test
+    public TMP_Text testText;
+    private void Start()
     {
-
+        if (Instance == null)
+            Instance = this;
+        else
+        {
+            Destroy(gameObject);
+        }
 #if !UNITY_EDITOR
         hWnd = GetActiveWindow();
 
@@ -64,10 +76,11 @@ public class TransparentWindow : MonoBehaviour
         Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 clickPos = new Vector2(worldPos.x, worldPos.y);
         Collider2D col = Physics2D.OverlapPoint(clickPos);
-        SetClickthrough(col == null);
+        SetClickthrough(col == null && !isMenuOpen);
+        //testText.text = (col == null) || isMenuOpen ? "true" : "false";
     }
 
-    private void SetClickthrough(bool clickthrough) 
+    public void SetClickthrough(bool clickthrough) 
     {
         if (clickthrough)
         {
