@@ -48,14 +48,17 @@ public class TransparentWindow : MonoBehaviour
     
     //test
     public TMP_Text testText;
-    private void Start()
+
+    private void Awake()
     {
         if (Instance == null)
             Instance = this;
         else
-        {
             Destroy(gameObject);
-        }
+    }
+
+    private void Start()
+    {
 #if !UNITY_EDITOR
         hWnd = GetActiveWindow();
 

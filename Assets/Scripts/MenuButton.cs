@@ -6,7 +6,7 @@ public class MenuButton : MonoBehaviour
     [SerializeField]
     private GameObject MenuScrollview;
 
-    private void Awake()
+    private void Start()
     {
         TransparentWindow.Instance.isMenuOpen = MenuScrollview.activeSelf;
     }
