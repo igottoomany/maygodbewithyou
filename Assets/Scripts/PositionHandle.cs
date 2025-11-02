@@ -36,5 +36,6 @@ public class PositionHandle : MonoBehaviour
     void OnMouseUp()
     {
         sr.color = new Color(1f, 1f, 1f, 0.5f); // white 127 alpha
+        GameManager.Instance.SaveSettingData();
     }
 }
