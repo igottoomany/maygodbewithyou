@@ -11,8 +11,6 @@ public class GameManager : MonoBehaviour
     private Transform jesus;
 
     private SpriteRenderer jesusSR;
-    [SerializeField]
-    private Slider transparencySlider;
     
     private SettingManager settingManager;
     private void Awake()
@@ -23,7 +21,7 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         jesusSR = jesus.GetComponent<SpriteRenderer>();
         settingManager = SettingManager.Instance;
-        LoadSettingData();
+        LoadSettingDataFile();
     }
 
     public void SetTransparency()
@@ -69,24 +67,31 @@ public class GameManager : MonoBehaviour
     {
         jesus.position = settingManager.settingData.position;
     }
+
+    public void SetSize()
+    {
+        jesus.localScale = settingManager.settingData.size;
+        SetFlipX();
+        SetFlipY();
+    }
     
     public static string SaveFileName()
     {
         string saveFile = Application.persistentDataPath + "/settings" + ".settings";
         return saveFile;
     }
-    public void SaveSettingData()
+    public void SaveSettingDataFile()
     {
         settingManager.UpdateSettingData();
         
         File.WriteAllText(SaveFileName(), JsonUtility.ToJson(settingManager.settingData, true));
     }
 
-    public void LoadSettingData()
+    public void LoadSettingDataFile()
     {
         if (!File.Exists(SaveFileName()))
         {
-            SaveSettingData();
+            SaveSettingDataFile();
         }
         string loadData = File.ReadAllText(SaveFileName());
         Debug.Log(loadData);

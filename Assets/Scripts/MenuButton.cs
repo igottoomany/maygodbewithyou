@@ -15,6 +15,6 @@ public class MenuButton : MonoBehaviour
     {
         MenuScrollview.SetActive(!MenuScrollview.activeSelf);
         TransparentWindow.Instance.isMenuOpen = MenuScrollview.activeSelf;
-        GameManager.Instance.SaveSettingData();
+        SettingManager.Instance.LoadSettingData();
     }
 }

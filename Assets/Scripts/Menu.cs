@@ -17,7 +17,7 @@ public class Menu : MonoBehaviour
     {
         if (Obj)
         {
-            pos = RectTransformUtility.WorldToScreenPoint (Camera.main, Obj.transform.position);
+            pos = RectTransformUtility.WorldToScreenPoint(Camera.main, Obj.transform.position);
             rt.position = pos;
         }
     }
