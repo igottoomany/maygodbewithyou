@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         }
         jesus.localScale = flipScale;
     }
+    
     public void SetFlipY()
     {
         Vector3 flipScale = jesus.localScale;
@@ -62,6 +63,11 @@ public class GameManager : MonoBehaviour
                 flipScale.y *= -1;
         }
         jesus.localScale = flipScale;
+    }
+
+    public void SetPosition()
+    {
+        jesus.position = settingManager.settingData.position;
     }
     
     public static string SaveFileName()
@@ -89,6 +95,7 @@ public class GameManager : MonoBehaviour
         SetTransparency();
         SetFlipX();
         SetFlipY();
+        SetPosition();
     }
     private void Update()
     {

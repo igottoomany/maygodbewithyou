@@ -28,6 +28,9 @@ public class PositionHandle : MonoBehaviour
         transform.parent.position = curPosition;
 
         sr.color = new Color(0.4f, 0.4f, 0.4f, 0.5f); // gray 127 alpha
+        SettingManager.Instance.settingData.position = transform.parent.position;
+        SettingManager.Instance.LoadSettingData();
+        GameManager.Instance.SetPosition();
     }
 
     void OnMouseUp()
