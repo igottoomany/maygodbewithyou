@@ -97,6 +97,11 @@ public class GameManager : MonoBehaviour
         SetFlipY();
         SetPosition();
     }
+
+    public void ExitProgram()
+    {
+        Application.Quit();
+    }
     private void Update()
     {
     }
